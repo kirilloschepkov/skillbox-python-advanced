@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/Users/macintosh/Documents/Программирование/Python/SkillBox/Python Advanced/mod5/tests/test_redirect.py", line 21, in test_redirect_stderr
+    raise Exception(text)
+Exception: Hello stderr.txt
