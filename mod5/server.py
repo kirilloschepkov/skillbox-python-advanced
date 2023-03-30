@@ -1,5 +1,5 @@
 import subprocess
-from flask import Flask, request
+from flask import Flask
 from flask_wtf import FlaskForm
 from wtforms import FloatField, StringField
 from wtforms.validators import InputRequired
@@ -17,15 +17,15 @@ class ValidationForm(FlaskForm):
 def code():
     form = ValidationForm()
     if form.validate_on_submit():
-        script, time = form.code.data, form.time.data
-        proc = subprocess.Popen(f'python -c "{script}"', shell=True, stdout=subprocess.PIPE)
+        command, timeout = form.code.data, form.time.data
+        proc = subprocess.Popen(f'python -c "{command}"', shell=True, stdout=subprocess.PIPE)
         try:
-            res, errs = proc.communicate(timeout=time)
-            res = res.decode()
+            outs, errs = proc.communicate(timeout=timeout)
+            outs = outs.decode()
         except subprocess.TimeoutExpired:
             proc.kill()
-            res = 'Исполнение кода не уложилось в данное время'
-        return res
+            outs = 'Исполнение кода не уложилось в данное время'
+        return outs
     else:
         return 'Invalid data', 400
 
