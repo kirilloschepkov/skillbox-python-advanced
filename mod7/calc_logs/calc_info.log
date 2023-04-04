@@ -1,0 +1,21 @@
+INFO | calculate_logger | 14:22:14 | 37 | Start calculate
+INFO | calculate_logger | 14:22:35 | 37 | Start calculate
+INFO | calculate_logger | 14:23:18 | 37 | Start calculate
+INFO | calculate_logger | 15:10:17 | 37 | Start calculate
+INFO | calculate_logger | 15:10:26 | 37 | Start calculate
+INFO | calculate_logger | 16:14:36 | 37 | Start calculate
+INFO | calculate_logger | 16:15:21 | 37 | Start calculate
+INFO | calculate_logger | 16:16:32 | 37 | Start calculate
+INFO | calculate_logger | 16:16:42 | 37 | Start calculate
+INFO | calculate_logger | 16:17:20 | 50 | 5 * 5 = 25
+INFO | calculate_logger | 16:18:06 | 37 | Start calculate
+INFO | calculate_logger | 16:18:30 | 37 | Start calculate
+INFO | calculate_logger | 16:18:43 | 37 | Start calculate
+INFO | calculate_logger | 16:18:54 | 37 | Start calculate
+INFO | calculate_logger | 16:19:28 | 37 | Start calculate
+INFO | calculate_logger | 16:19:43 | 50 | 2 ^ 2 = 4
+INFO | calculate_logger | 14:00:25 | 37 | Start calculate
+INFO | calculate_logger | 14:00:38 | 37 | Start calculate
+INFO | calculate_logger | 14:00:56 | 50 | 5 * 2 = 10
+INFO | calculate_logger | 14:01:29 | 37 | Start calculate
+INFO | calculate_logger | 14:01:50 | 50 | 5 ^ 2 = 25
