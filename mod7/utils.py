@@ -1,9 +1,9 @@
 import logging.config
 from dict_config import config_logging
-# import logging_tree
+import logging_tree
 
-# with open('logging_tree.txt', 'w') as file:
-#     file.write(logging_tree.format.build_description())
+with open('logging_tree.txt', 'w') as file:
+    file.write(logging_tree.format.build_description())
 
 # handler = logging.FileHandler('utils_logs.log')
 # formatter = logging.Formatter(fmt='%(asctime)s, %(levelname)s, %(message)s', datefmt='%H:%M:%S')
