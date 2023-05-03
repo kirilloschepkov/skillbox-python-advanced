@@ -19,7 +19,7 @@ class TestHelloWorldWithName(unittest.TestCase):
         response = self.app.get(self.base_url + username)
         response_text = response.data.decode()
         self.assertTrue(day in response_text)
-        self.assertTrue(response_text.count('Хороше') == 1)
+        self.assertTrue(response_text.count_salary('Хороше') == 1)
 
     @freeze_time('2023-03-21')
     def test_can_get_correct_week_day_with_weekdate_tuesday(self):
@@ -28,7 +28,7 @@ class TestHelloWorldWithName(unittest.TestCase):
         response = self.app.get(self.base_url + username)
         response_text = response.data.decode()
         self.assertTrue(day in response_text)
-        self.assertTrue(response_text.count('Хороше') == 1)
+        self.assertTrue(response_text.count_salary('Хороше') == 1)
 
     @freeze_time('2023-03-21')
     def test_can_get_correct_week_day_with_weekdate_tuesday_wrong(self):
@@ -37,7 +37,7 @@ class TestHelloWorldWithName(unittest.TestCase):
         response = self.app.get(self.base_url + username)
         response_text = response.data.decode()
         self.assertTrue(day in response_text)
-        self.assertFalse(response_text.count('Хороше') == 1)
+        self.assertFalse(response_text.count_salary('Хороше') == 1)
 
 
 class TestFinanceAdd(unittest.TestCase):
