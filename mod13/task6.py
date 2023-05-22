@@ -22,9 +22,10 @@ sql_request_insert_employee = """
 """
 
 
-def update_work_schedule(c: sqlite3.Cursor) -> None:
-    c.execute(sql_request_drop_all_rows)
-    employees = c.execute(sql_request_get_all_employees).fetchall()
+with sqlite3.connect("hw.db") as conn:
+    cursor = conn.cursor()
+    cursor.execute(sql_request_drop_all_rows)
+    employees = cursor.execute(sql_request_get_all_employees).fetchall()
     working_days = {employee[0]: 0 for employee in employees}
     today = datetime.strptime("2020-01-01", "%Y-%m-%d")
     workers_on_day = {today + timedelta(days=i): 0 for i in range(366)}
@@ -33,13 +34,8 @@ def update_work_schedule(c: sqlite3.Cursor) -> None:
             if WEEK_DAYS[day.weekday()] == WEEK_DAYS[SECTIONS.index(sport)]:
                 continue
             if working_days[id] != COUNT_WORKING_DAYS_FOR_EVERYONE_EMPLOYEE + 1:
-                c.execute(sql_request_insert_employee, (id, str(day)[:10]))
+                cursor.execute(sql_request_insert_employee, (id, str(day)[:10]))
                 working_days[id] += 1
                 workers_on_day[day] += 1
                 if workers_on_day[day] == 10:
                     break
-
-
-with sqlite3.connect("hw.db") as conn:
-    cursor = conn.cursor()
-    update_work_schedule(cursor)
